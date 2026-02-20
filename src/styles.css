@@ -1,0 +1,7 @@
+/* src/styles.css */
+@import "tailwindcss";
+
+/* Optional: Add the specific brand color from your image */
+@theme {
+  --color-brand-purple: #7952b3;
+}
