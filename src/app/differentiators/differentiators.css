@@ -1,0 +1,77 @@
+.page-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 50px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-title {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  color: #1a3a8a;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+  max-width: 1100px;
+  align-items: center;
+}
+
+/* Card Styling */
+.card {
+  max-width: 280px;
+  h3 { color: #333; font-size: 1.1rem; margin-bottom: 8px; }
+  p { font-size: 0.9rem; color: #666; line-height: 1.4; }
+}
+
+/* Specific Grid Placements */
+.top-center { grid-column: 2; text-align: center; }
+.middle-left { grid-column: 1; text-align: right; }
+.middle-right { grid-column: 3; text-align: left; }
+.bottom-left { grid-column: 1; text-align: right; }
+.bottom-center { grid-column: 2; text-align: center; }
+.bottom-right { grid-column: 3; text-align: left; }
+
+/* Diagram Logic */
+.diagram-container {
+  grid-column: 2;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(165, 198, 236, 0.6); 
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  
+  .c1 { transform: translate(0, -50px); }
+  .c2 { transform: translate(45px, -15px); }
+  .c3 { transform: translate(30px, 45px); }
+  .c4 { transform: translate(-30px, 45px); }
+  .c5 { transform: translate(-45px, -15px); }
+}
+
+.footer-banner {
+  margin-top: 50px;
+  background-color: #b8cce4;
+  padding: 15px 40px;
+  font-weight: bold;
+  border-radius: 4px;
+}

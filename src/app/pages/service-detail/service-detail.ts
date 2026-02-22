@@ -7,39 +7,50 @@ import { Component,signal } from '@angular/core';
   styleUrl: './service-detail.css',
 })
 export class ServiceDetail {
-  
-  // Current active step index
-  currentStep = signal(0);
-
-  // Data matching the images you provided
-  steps = [
+   solutionSteps = [
     {
-      title: 'Step 1: Application',
-      description: 'Your journey starts here. Submit your profile for review.',
-      image: 'assets/application.jpg'
+      title: 'Managed services',
+      color: '#4a76c5', // Blue
+      icon: 'assets/icons/managed-service.png',
+      points: [
+        'Continuous compliance: Ongoing audits, monitoring, and controls',
+        'Model ops: Model monitoring, retraining, and drift management',
+        'Platform reliability: 24/7 operations, SLAs, and incident response',
+        'Personalization: Continuous tuning for journeys and UBI pricing'
+      ]
     },
     {
-      title: 'Step 2: Assessment',
-      description: 'We evaluate your skills through technical tests.',
-      image: 'assets/assessment.jpg'
+      title: 'Digital Innovation',
+      color: '#4db6ac', // Teal
+      icon: 'assets/icons/digital-innovation.png',
+      points: [
+        'AI underwriting & fraud detection',
+        'IoT-based risk monitoring',
+        'Usage-based insurance (auto/health)',
+        'Wearables for health personalization'
+      ]
     },
     {
-      title: 'Step 3: Interview',
-      description: 'After the hiring manager reviews your profile, they will share feedback with your recruiter to schedule a business interview with you.',
-      image: 'assets/interview.png' // This matches image_e08c66.jpg
+      title: 'Business Transformation',
+      color: '#43a047', // Green
+      icon: 'assets/icons/business-transform.png',
+      points: [
+        'Fraud Management and Risk Control',
+        'Compliance automation',
+        'Microinsurance for SME & gig workers'
+      ]
+    },
+    {
+      title: 'Enablement',
+      color: '#7cb342', // Light Green
+      icon: 'assets/icons/enablement.png',
+      points: [
+        'Cloud based scalable infrastructure',
+        'Agile squads',
+        'Government/Regulatory sandboxes support',
+        'AI governance framework for compliance'
+      ]
     }
   ];
-
-  next() {
-    if (this.currentStep() < this.steps.length - 1) {
-      this.currentStep.update(s => s + 1);
-    }
-  }
-
-  prev() {
-    if (this.currentStep() > 0) {
-      this.currentStep.update(s => s - 1);
-    }
-  }
 
 }
