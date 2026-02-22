@@ -1,0 +1,40 @@
+.iii-container {
+  position: relative;
+  width: 450px;
+  height: 400px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.iii-bar {
+  width: 90px;
+  height: 340px;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.iii-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.moving-bg {
+  position: absolute;
+  width: 100%;
+  height: 200%; /* Allows for vertical scrolling */
+  background-size: cover;
+  background-position: center;
+  /* This creates the continuous streaming effect */
+  animation: streamVertical 15s linear infinite;
+}
+
+@keyframes streamVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}

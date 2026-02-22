@@ -1,39 +1,74 @@
-<nav class="bg-[#7952b3] p-4 shadow-md relative">
-  <div class="max-w-7xl mx-auto flex items-center gap-8 text-white">
-    
-    <div class="bg-white text-[#7952b3] font-bold rounded-md px-3 py-1 text-xl">B</div>
+<nav class="flex items-center justify-between px-12 py-6 bg-white border-b relative">
+  <div class="flex items-center space-x-2">
+    <div class="text-2xl font-bold text-blue-900 uppercase">PHALANX</div>
+  </div>
 
-    <div class="flex items-center gap-6">
-      <a href="#" class="hover:text-gray-200 transition">Docs</a>
-      
-      <div class="relative">
-        <button 
-          (click)="togglePathways()" 
-          class="flex items-center gap-1 hover:text-gray-200 focus:outline-none transition">
-          Pathways to Accelerator
-          <svg class="w-4 h-4 transition-transform" [class.rotate-180]="isPathwaysOpen()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
+  <ul class="flex items-center space-x-8 text-sm font-medium text-gray-700">
+    <li routerLink="/home" 
+      routerLinkActive="border-b-2 border-black" 
+      class="hover:text-blue-600 cursor-pointer pb-1">
+    Home
+  </li>
+    <li  routerLink="/about"  class="hover:text-blue-600 cursor-pointer">About</li>
 
-        @if (isPathwaysOpen()) {
-          <div class="absolute left-0 mt-4 w-56 bg-white rounded-md shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2">
-            <a 
-  routerLink="/servicedetails" 
-  (click)="isPathwaysOpen.set(false)" 
-  class="block px-4 py-3 text-gray-800 hover:bg-gray-100 cursor-pointer">
-  Services
-</a>
-
-
-            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 border-b border-gray-50">Alumni</a>
-            <a href="#" class="block px-4 py-3 text-gray-800 hover:bg-gray-100">About</a>
-          </div>
-        }
+    <li class="group py-4">
+      <div class="flex items-center cursor-pointer hover:text-blue-600">
+        Services 
+        <span class="ml-1 text-[10px] transition-transform group-hover:rotate-180">▲</span>
       </div>
 
-      <a href="#" class="hover:text-gray-200 transition">Contact us</a>
-      
-    </div>
-  </div>
+      <div class="absolute top-[80px] left-1/2 -translate-x-1/2 w-[95vw] max-w-7xl 
+                  invisible opacity-0 group-hover:visible group-hover:opacity-100 
+                  transition-all duration-300 z-50">
+        
+        <div class="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100 mx-auto">
+          <h2 class="text-4xl font-bold text-blue-950 mb-4">Our Services</h2>
+          <p class="text-gray-600 mb-10 max-w-4xl">
+            <b>C</b>larity, <b>A</b>gility, <b>S</b>uperiority through <b>E</b>xpert services...
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="service-section">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 bg-yellow-50 rounded-xl text-yellow-600">💡</div>
+                <div>
+                  <h3 class="font-bold text-xl text-yellow-700 leading-tight">Advisory & Consulting</h3>
+                  <p class="text-[10px] text-gray-400 font-bold uppercase mt-1">Setting-up Enterprise For Value with AI</p>
+                </div>
+              </div>
+              <hr class="border-gray-200 mb-6">
+              <ul class="space-y-4 text-[15px] text-gray-800">
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">🧠 AI Strategy</li>
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">📤 Benefit Value & Realization</li>
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">🎯 Product Portfolio Management</li>
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">📄 Platform Assessment</li>
+              </ul>
+            </div>
+
+            <div class="service-section">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="p-3 bg-blue-50 rounded-xl text-blue-500 font-mono font-bold">&lt; &gt;</div>
+                <div>
+                  <h3 class="font-bold text-xl text-blue-500 leading-tight">Build</h3>
+                  <p class="text-[10px] text-gray-400 font-bold uppercase mt-1">AI driven Optimum approach to Maximum Build</p>
+                </div>
+              </div>
+              <hr class="border-gray-200 mb-6">
+              <ul class="space-y-4 text-[15px] text-gray-800">
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">✨ AI Led Acceleration</li>
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">🔍 Program Discovery & Inception</li>
+                <li class="flex items-center gap-2 cursor-pointer hover:text-blue-600">📦 Product Setup & Modelling</li>
+              </ul>
+            </div>
+
+            </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="hover:text-blue-600 cursor-pointer">Expertise</li>
+    <li class="hover:text-blue-600 cursor-pointer">Resources ▼</li>
+    <li class="hover:text-blue-600 cursor-pointer">Career</li>
+    <li><button class="bg-blue-900 text-white px-5 py-2 rounded-lg">Contact Us</button></li>
+  </ul>
 </nav>
